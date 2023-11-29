@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fc466b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3f5efb,
+    #fc466b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3f5efb,
+    #fc466b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.calculator {
+  background-color: whitesmoke;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.calculator-display {
+  background-color: black;
+  color: whitesmoke;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.calculator-display h1 {
+  margin: 0;
+  padding: 25px;
+  font-weight: 300;
+  font-family: inherit;
+  letter-spacing: 3px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* chrome scroll */
+.calculator-display h1::-webkit-scrollbar {
+  height: 8px;
+}
+
+.calculator-display h1::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.calculator-display h1::-webkit-scrollbar-thumb {
+  background: #6f6f6f;
+}
+
+.calculator-display h1::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
+
+/* Buttons */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+button {
+  min-height: 50px;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #d5d3d3;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+button:focus {
+  outline: none;
+}
+
+.operator {
+  background-color: #8c8888;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.clear {
+  background-color: rgba(235, 59, 59, 0.86);
+  color: whitesmoke;
+}
+
+.clear:hover {
+  filter: brightness(1.3);
+}
+
+.equal-sign {
+  grid-column: -2;
+  grid-row: 2 / 6;
+  color: whitesmoke;
+  font-size: 40px;
+  background-color: rgba(87, 184, 124, 0.968);
+}
+
+/* media */
+
+@media (max-width: 600px) {
+  .calculator {
+    width: 95%;
+  }
+}
